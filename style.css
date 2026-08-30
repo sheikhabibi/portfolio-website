@@ -541,3 +541,58 @@ a.project-title:hover {
 .animation-credits a:hover {
     opacity: 1;
 }
+
+/* Background Easter Eggs */
+.easter-eggs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1; /* Below terminal window */
+}
+
+.ee-text {
+    position: absolute;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    opacity: 0;
+    pointer-events: auto; /* Allows hover */
+    transition: opacity 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+    cursor: default;
+    padding: 30px; /* massive hover area */
+}
+
+.easter-egg-hint {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    opacity: 0.4;
+    letter-spacing: 1px;
+    pointer-events: none;
+    z-index: 1; /* Below terminal window */
+    writing-mode: vertical-rl;
+}
+
+.ee-text:hover {
+    opacity: 1;
+    color: #00ff00;
+    text-shadow: 2px 2px 4px #000, -2px -2px 4px #000, 0 0 10px #000, 0 0 5px #00ff00;
+}
+/* Social Network Graph */
+.network-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#network-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: crosshair;
+}
