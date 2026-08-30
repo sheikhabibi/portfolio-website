@@ -83,8 +83,12 @@ document.addEventListener('touchmove', (e) => {
         mouse.y = e.touches[0].clientY;
         mouse.active = true;
     }
-    // Prevent scrolling if touching the background so touchmove doesn't get cancelled
-    if (!e.target.closest('.terminal-body')) {
+}, { passive: true });
+
+// Separate non-passive listener just for preventing background scroll
+document.addEventListener('touchmove', (e) => {
+    // Prevent scrolling if touching outside the terminal window so touchmove doesn't get cancelled
+    if (!e.target.closest('.terminal-window')) {
         if (e.cancelable) {
             e.preventDefault();
         }
@@ -508,10 +512,8 @@ function initNetwork() {
     }
     
     canvas.addEventListener('mousemove', moveHandler);
-    canvas.addEventListener('touchmove', (e) => {
-        if(e.cancelable) e.preventDefault();
-        moveHandler(e);
-    }, { passive: false });
+    // Removed touchmove on canvas entirely. Chrome Mobile sometimes intercepts touch events 
+    // on canvas elements inside auto-overflow containers even with passive: true.
     
     canvas.addEventListener('mouseleave', () => {
         m.active = false;
