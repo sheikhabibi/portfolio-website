@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mujaffar | Developer & Quant</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Mono:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="interactive-bg" class="interactive-bg"></canvas>
+    
+    <nav class="top-nav outfit">
+        <div class="nav-links">
+            <button class="nav-btn active" data-target="home">HOME</button>
+            <button class="nav-btn" data-target="projects">PROJECTS</button>
+            <button class="nav-btn" data-target="social">SOCIAL</button>
+        </div>
+        <div class="status-online mono">STATUS: ONLINE</div>
+    </nav>
+
+    <div class="terminal-window">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="close"></span>
+                <span class="minimize"></span>
+                <span class="maximize"></span>
+            </div>
+            <div class="terminal-title">bash - mujaffar@portfolio</div>
+            <div style="width: 54px;"></div> <!-- Spacer to balance flex layout -->
+        </div>
+
+        <div class="terminal-body">
+            <!-- Home Page -->
+            <section id="home" class="page active home-page" style="position: relative;">
+                <canvas id="firefly-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></canvas>
+                <button id="whoami-btn" class="whoami-btn" style="z-index: 2;">$ whoami</button>
+            </section>
+
+            <!-- About Page -->
+            <section id="about" class="page">
+                <div class="editorial-header">
+                    <h1 class="hero-name outfit">Mujaffar<span>&copy;</span></h1>
+                    <div class="hero-intro">
+                        <span class="intro-label mono">[INTRO]</span>
+                        <p class="intro-text outfit">Physicist | Quant Trader in Training | Software Developer</p>
+                    </div>
+                </div>
+
+                <div class="dashed-divider"></div>
+
+                <div class="about-content">
+                    <h2 class="vt"><span class="blink-cursor">></span> ABOUT_ME</h2>
+                    <p class="outfit">
+                        I am a focused, detail-oriented creator who values efficiency and absolute control over my digital environment. 
+                        With a Master's degree in Physics, I am currently transitioning into the world of Quant Trading. 
+                    </p>
+                    <br>
+                    <p class="outfit">
+                        I am actively honing my algorithmic problem-solving skills, having conquered nearly 100 LeetCode problems and currently venturing into competitive programming on Codeforces. Alongside my competitive programming and quant studies, I build highly functional, utilitarian software projects and browser extensions.
+                    </p>
+                    
+                    <h2 class="vt" style="margin-top: 40px;"><span class="blink-cursor">></span> SKILLS_&_TECH</h2>
+                    <div class="skills-grid mono">
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">Algorithms</span>
+                        <span class="skill-tag">Physics/Math</span>
+                    </div>
+                </div>
+                
+                <button id="exit-btn" class="exit-btn">> exit()</button>
+            </section>
+
+            <!-- Projects Page -->
+            <section id="projects" class="page">
+                <div class="widget projects-widget">
+                    <h2 class="vt">PROJECTS</h2>
+                    <ul class="project-list outfit">
+                        <li>
+                            <a href="https://github.com/sheikhabibi/codeforces-search" target="_blank" class="project-title mono">> Codeforces Search</a>
+                            <p class="project-desc">A tool to optimize and search within the Codeforces platform.</p>
+                        </li>
+                        <li>
+                            <a href="https://github.com/sheikhabibi/leetcode-importer" target="_blank" class="project-title mono">> LeetCode Importer</a>
+                            <p class="project-desc">A utility for importing and managing LeetCode solutions.</p>
+                        </li>
+                        <li>
+                            <a href="https://github.com/sheikhabibi/telegram-music-bot" target="_blank" class="project-title mono">> Telegram Music Bot</a>
+                            <p class="project-desc">A fully functional bot for playing music directly within Telegram.</p>
+                        </li>
+                        <li>
+                            <a href="https://github.com/sheikhabibi/cliffnotes-downloader-v2" target="_blank" class="project-title mono">> Cliffnotes Downloader V2</a>
+                            <p class="project-desc">An automated script to download and archive study materials.</p>
+                        </li>
+                        <li>
+                            <a href="https://github.com/sheikhabibi/time-stick-mc-mod" target="_blank" class="project-title mono">> Time Stick MC Mod</a>
+                            <p class="project-desc">A custom Minecraft mod introducing time-manipulation mechanics.</p>
+                        </li>
+                        <li>
+                            <span class="project-title mono">> Terminal New Tab & Dark Theme</span>
+                            <p class="project-desc">Custom productivity-focused browser extensions with particle gravity backgrounds and focus heatmaps.</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Social Page (Globe) -->
+            <section id="social" class="page">
+                <div class="globe-container">
+                    <canvas id="globe-canvas"></canvas>
+                    <div id="globe-tooltip" class="outfit"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
