@@ -622,6 +622,30 @@ a.project-title:hover {
     writing-mode: vertical-rl;
 }
 
+.source-code-link {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    opacity: 0.4;
+    letter-spacing: 1px;
+    z-index: 1;
+}
+
+.source-code-link a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-underline-offset: 3px;
+    transition: opacity 0.3s, color 0.3s;
+}
+
+.source-code-link a:hover {
+    opacity: 1;
+    color: #00ff00;
+}
+
 .ee-text:hover {
     opacity: 1;
     color: #00ff00;
