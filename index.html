@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +8,17 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Mono:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Mono:wght@400;700&family=VT323&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <canvas id="interactive-bg" class="interactive-bg"></canvas>
-    
-    <div class="status-online mono">STATUS: ONLINE</div>
-    
+
+    <div class="status-online mono">STATUS: <span class="online-text">ONLINE</span></div>
+
     <nav class="top-nav outfit">
         <button class="nav-btn active" data-target="home">HOME</button>
         <button class="nav-btn" data-target="projects">PROJECTS</button>
@@ -35,7 +39,8 @@
         <div class="terminal-body">
             <!-- Home Page -->
             <section id="home" class="page active home-page" style="position: relative;">
-                <canvas id="firefly-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></canvas>
+                <canvas id="firefly-canvas"
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></canvas>
                 <button id="whoami-btn" class="whoami-btn" style="z-index: 2;">$ whoami</button>
             </section>
 
@@ -52,17 +57,21 @@
                 <div class="dashed-divider"></div>
 
                 <div class="about-content">
-                    <h2 class="vt"><span class="blink-cursor">></span> ABOUT_ME</h2>
+                    <h2 class="vt">ABOUT_ME<span class="blink-cursor">_</span></h2>
                     <p class="outfit">
-                        I am a focused, detail-oriented creator who values efficiency and absolute control over my digital environment. 
-                        With a Master's degree in Physics, I am currently transitioning into the world of Quant Trading. 
+                        I am a focused, detail-oriented creator who values efficiency and absolute control over my
+                        digital environment.
+                        With a Master's degree in Physics, I am currently transitioning into the world of Quant Trading.
                     </p>
                     <br>
                     <p class="outfit">
-                        I am actively honing my algorithmic problem-solving skills, having conquered nearly 100 LeetCode problems and currently venturing into competitive programming on Codeforces. Alongside my competitive programming and quant studies, I build highly functional, utilitarian software projects and browser extensions.
+                        I am actively honing my algorithmic problem-solving skills, having conquered nearly 100 LeetCode
+                        problems and currently venturing into competitive programming on Codeforces. Alongside my
+                        competitive programming and quant studies, I build highly functional, utilitarian software
+                        projects and browser extensions.
                     </p>
-                    
-                    <h2 class="vt" style="margin-top: 40px;"><span class="blink-cursor">></span> SKILLS_&_TECH</h2>
+
+                    <h2 class="vt" style="margin-top: 40px;">SKILLS_&_TECH<span class="blink-cursor">_</span></h2>
                     <div class="skills-grid mono">
                         <span class="skill-tag">C++</span>
                         <span class="skill-tag">Python</span>
@@ -73,40 +82,62 @@
                         <span class="skill-tag">Physics/Math</span>
                     </div>
                 </div>
-                
+
                 <button id="exit-btn" class="exit-btn">> exit()</button>
             </section>
 
             <!-- Projects Page -->
             <section id="projects" class="page">
                 <div class="widget projects-widget">
-                    <h2 class="vt">PROJECTS</h2>
+                    <h2 class="vt">PROJECTS<span class="blink-cursor">_</span></h2>
                     <ul class="project-list outfit">
                         <li>
-                            <a href="https://github.com/sheikhabibi/codeforces-search" target="_blank" class="project-title mono">> Codeforces Search</a>
-                            <p class="project-desc">A tool to optimize and search within the Codeforces platform.</p>
+                            <a href="https://github.com/sheikhabibi/codeforces-search" target="_blank"
+                                class="project-title mono">> Codeforces Search</a>
+                            <p class="project-desc">A Chrome extension that lets you instantly jump to any Codeforces
+                                problem directly from the address bar.</p>
                         </li>
                         <li>
-                            <a href="https://github.com/sheikhabibi/leetcode-importer" target="_blank" class="project-title mono">> LeetCode Importer</a>
-                            <p class="project-desc">A utility for importing and managing LeetCode solutions.</p>
+                            <a href="https://github.com/sheikhabibi/leetcode-importer" target="_blank"
+                                class="project-title mono">> LeetCode Importer</a>
+                            <p class="project-desc">A utility to seamlessly import and manage LeetCode algorithmic
+                                solutions.</p>
                         </li>
                         <li>
-                            <a href="https://github.com/sheikhabibi/telegram-music-bot" target="_blank" class="project-title mono">> Telegram Music Bot</a>
-                            <p class="project-desc">A fully functional bot for playing music directly within Telegram.</p>
+                            <a href="https://github.com/sheikhabibi/telegram-music-bot" target="_blank"
+                                class="project-title mono">> Telegram Music Bot</a>
+                            <p class="project-desc">A bot that extracts high-quality MP3s from Spotify and YouTube,
+                                serving them directly via Google Drive.</p>
                         </li>
                         <li>
-                            <a href="https://github.com/sheikhabibi/cliffnotes-downloader-v2" target="_blank" class="project-title mono">> Cliffnotes Downloader V2</a>
-                            <p class="project-desc">An automated script to download and archive study materials.</p>
+                            <a href="https://github.com/sheikhabibi/cliffnotes-downloader-v2" target="_blank"
+                                class="project-title mono">> Cliffnotes Downloader V2</a>
+                            <p class="project-desc">A local extension engine that bypasses paywalls and compiles premium
+                                CliffsNotes into high-quality PDFs.</p>
                         </li>
                         <li>
-                            <a href="https://github.com/sheikhabibi/time-stick-mc-mod" target="_blank" class="project-title mono">> Time Stick MC Mod</a>
-                            <p class="project-desc">A custom Minecraft mod introducing time-manipulation mechanics.</p>
+                            <a href="https://github.com/sheikhabibi/time-stick-mc-mod" target="_blank"
+                                class="project-title mono">> Time Stick MC Mod</a>
+                            <p class="project-desc">A Fabric & NeoForge Minecraft mod that grants the power to freeze
+                                entities in time and defuse explosive threats.</p>
                         </li>
                         <li>
-                            <span class="project-title mono">> Terminal New Tab & Dark Theme</span>
-                            <p class="project-desc">Custom productivity-focused browser extensions with particle gravity backgrounds and focus heatmaps.</p>
+                            <a href="https://github.com/sheikhabibi/termtab" target="_blank"
+                                class="project-title mono">> Terminal New Tab</a>
+                            <p class="project-desc">A terminal-inspired dashboard with focus heatmaps, a built-in
+                                Pomodoro timer, and a dual time tracker.</p>
+                        </li>
+                        <li>
+                            <a href="https://github.com/sheikhabibi/dark-terminal-theme" target="_blank"
+                                class="project-title mono">> Dark Terminal Theme</a>
+                            <p class="project-desc">A pitch-black, minimalist Chrome theme designed specifically as the
+                                visual companion to the TermTab extension.</p>
                         </li>
                     </ul>
+                </div>
+
+                <div class="animation-credits outfit">
+                    Background spider animation inspired by <a href="https://www.youtube.com/@zensei-xg4bw" target="_blank">meowish (@zensei-xg4bw)</a>
                 </div>
             </section>
 
@@ -121,4 +152,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>

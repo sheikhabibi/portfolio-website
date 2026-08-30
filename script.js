@@ -68,6 +68,37 @@ document.addEventListener('mouseout', (e) => {
     }
 });
 
+// Touch support for mobile devices
+document.addEventListener('touchstart', (e) => {
+    if (e.touches.length > 0) {
+        mouse.x = e.touches[0].clientX;
+        mouse.y = e.touches[0].clientY;
+        mouse.active = true;
+    }
+});
+
+document.addEventListener('touchmove', (e) => {
+    if (e.touches.length > 0) {
+        mouse.x = e.touches[0].clientX;
+        mouse.y = e.touches[0].clientY;
+        mouse.active = true;
+    }
+    // Prevent scrolling if touching the background so touchmove doesn't get cancelled
+    if (!e.target.closest('.terminal-body')) {
+        if (e.cancelable) {
+            e.preventDefault();
+        }
+    }
+}, { passive: false });
+
+document.addEventListener('touchend', () => {
+    mouse.active = false;
+});
+
+document.addEventListener('touchcancel', () => {
+    mouse.active = false;
+});
+
 // --- Interactive Background (Spiders) ---
 const bgCanvas = document.getElementById('interactive-bg');
 const bgCtx = bgCanvas.getContext('2d');
