@@ -4,6 +4,11 @@ const pages = document.querySelectorAll('.page');
 let currentPage = 'home';
 
 function switchPage(targetId) {
+    const terminalWindow = document.querySelector('.terminal-window');
+    if (terminalWindow) {
+        terminalWindow.classList.remove('hidden');
+    }
+
     navBtns.forEach(b => b.classList.remove('active'));
     pages.forEach(p => p.classList.remove('active'));
     
@@ -30,14 +35,25 @@ navBtns.forEach(btn => {
     });
 });
 
+let isWhoamiHovered = false;
 const whoamiBtn = document.getElementById('whoami-btn');
 if (whoamiBtn) {
     whoamiBtn.addEventListener('click', () => switchPage('about'));
+    whoamiBtn.addEventListener('mouseenter', () => isWhoamiHovered = true);
+    whoamiBtn.addEventListener('mouseleave', () => isWhoamiHovered = false);
 }
 
 const exitBtn = document.getElementById('exit-btn');
 if (exitBtn) {
     exitBtn.addEventListener('click', () => switchPage('home'));
+}
+
+const closeBtn = document.querySelector('.close');
+if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+        const terminalWindow = document.querySelector('.terminal-window');
+        if (terminalWindow) terminalWindow.classList.add('hidden');
+    });
 }
 
 let mouse = { x: -1000, y: -1000, active: false };
@@ -227,8 +243,8 @@ function drawFireflies() {
     const cx = fireflyCanvas.width / 2;
     const cy = fireflyCanvas.height / 2;
     
-    // Spawn new fireflies near center
-    if (Math.random() < 0.6) {
+    // Spawn new fireflies near center only if hovered
+    if (isWhoamiHovered && Math.random() < 0.6) {
         const bx = cx + (Math.random() - 0.5) * 280;
         const by = cy + (Math.random() - 0.5) * 80;
         fireflies.push(createFirefly(bx, by, cx, cy));
