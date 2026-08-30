@@ -418,21 +418,22 @@ function initNetwork() {
         width = canvas.width = rect.width;
         height = canvas.height = rect.height;
         
+        let yOffset = -70;
         centerNode.x = width / 2;
-        centerNode.y = height / 2;
+        centerNode.y = height / 2 + yOffset;
         
         let boxW = 160;
         let boxH = 40;
         
         let ghX = Math.max(20, width * 0.15 - boxW/2);
-        let ghY = height * 0.25;
+        let ghY = height * 0.25 + yOffset;
         let liX = Math.max(20, width * 0.15 - boxW/2);
-        let liY = height * 0.75;
+        let liY = height * 0.75 + yOffset;
         
         let lcX = Math.min(width - 20 - boxW, width * 0.85 - boxW/2);
-        let lcY = height * 0.35;
+        let lcY = height * 0.35 + yOffset;
         let cfX = Math.min(width - 20 - boxW, width * 0.85 - boxW/2);
-        let cfY = height * 0.85;
+        let cfY = height * 0.85 + yOffset;
         
         nodes = [
             { id: 'github', label: 'Github', url: 'https://github.com/sheikhabibi', box: {x: ghX, y: ghY, w: boxW, h: boxH}, side: 'left', hitFlash: 0 },
@@ -459,10 +460,15 @@ function initNetwork() {
                 n.pathLen += Math.hypot(n.path[i+1].x - n.path[i].x, n.path[i+1].y - n.path[i].y);
             }
         }
+        pulses = []; // Clear old pulses referencing old nodes
     }
     
     initLayout();
-    window.addEventListener('resize', initLayout);
+    if (window._networkResizeHandler) {
+        window.removeEventListener('resize', window._networkResizeHandler);
+    }
+    window._networkResizeHandler = initLayout;
+    window.addEventListener('resize', window._networkResizeHandler);
     
     let hoveredNode = null;
     let m = { x: -1000, y: -1000, active: false };

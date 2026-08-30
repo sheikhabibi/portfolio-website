@@ -96,7 +96,8 @@ body {
     align-items: center;
 }
 
-.close::before, .close::after {
+.close::before,
+.close::after {
     content: '';
     position: absolute;
     width: 6px;
@@ -117,7 +118,8 @@ body {
     background: #ff5f56 !important;
 }
 
-.close:hover::before, .close:hover::after {
+.close:hover::before,
+.close:hover::after {
     background-color: #4d0000;
 }
 
@@ -154,6 +156,23 @@ body {
     font-size: 0.9rem;
     letter-spacing: 1px;
     z-index: 100;
+}
+
+.brand-text {
+    position: fixed;
+    top: 30px;
+    left: 40px;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    z-index: 100;
+    transition: color 0.3s, text-shadow 0.3s;
+    cursor: default;
+}
+
+.brand-text:hover {
+    color: #00ff00;
+    text-shadow: 2px 2px 4px #000, -2px -2px 4px #000, 0 0 10px #000, 0 0 5px #00ff00;
 }
 
 .online-text {
@@ -213,7 +232,8 @@ body {
     display: block;
 }
 
-#projects.active {
+#projects.active,
+#social.active {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -243,21 +263,41 @@ body {
 }
 
 @keyframes glowPulse {
-    0%, 100% {
+
+    0%,
+    100% {
         text-shadow: 0 0 5px rgba(176, 141, 255, 0.3), 0 0 10px rgba(176, 141, 255, 0.1);
     }
+
     50% {
         text-shadow: 0 0 15px rgba(176, 141, 255, 0.9), 0 0 30px rgba(176, 141, 255, 0.6), 0 0 45px rgba(176, 141, 255, 0.3);
     }
 }
 
 @keyframes vibrate {
-    0% { transform: translate(0); }
-    20% { transform: translate(-2px, 2px); }
-    40% { transform: translate(-2px, -2px); }
-    60% { transform: translate(2px, 2px); }
-    80% { transform: translate(2px, -2px); }
-    100% { transform: translate(0); }
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
 }
 
 /* Exit Button */
@@ -307,12 +347,13 @@ body {
     color: var(--text-primary);
 }
 
-.hero-name span {
-    font-size: 2rem;
-    position: absolute;
-    top: 15px;
-    right: -35px;
-    font-weight: 400;
+.hero-name span.surname {
+    font-size: 6rem;
+    font-weight: 300;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--text-secondary);
+    letter-spacing: -1px;
 }
 
 .hero-intro {
@@ -550,7 +591,8 @@ a.project-title:hover {
     width: 100vw;
     height: 100vh;
     pointer-events: none;
-    z-index: 1; /* Below terminal window */
+    z-index: 1;
+    /* Below terminal window */
 }
 
 .ee-text {
@@ -558,10 +600,12 @@ a.project-title:hover {
     color: var(--text-secondary);
     font-size: 0.85rem;
     opacity: 0;
-    pointer-events: auto; /* Allows hover */
+    pointer-events: auto;
+    /* Allows hover */
     transition: opacity 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
     cursor: default;
-    padding: 30px; /* massive hover area */
+    padding: 30px;
+    /* massive hover area */
 }
 
 .easter-egg-hint {
@@ -573,7 +617,8 @@ a.project-title:hover {
     opacity: 0.4;
     letter-spacing: 1px;
     pointer-events: none;
-    z-index: 1; /* Below terminal window */
+    z-index: 1;
+    /* Below terminal window */
     writing-mode: vertical-rl;
 }
 
@@ -582,17 +627,23 @@ a.project-title:hover {
     color: #00ff00;
     text-shadow: 2px 2px 4px #000, -2px -2px 4px #000, 0 0 10px #000, 0 0 5px #00ff00;
 }
+
 /* Social Network Graph */
 .network-container {
     width: 100%;
-    height: 100%;
+    flex: 1;
     position: relative;
     overflow: hidden;
+    margin-bottom: 15px;
+    /* space between canvas and credits */
 }
 
 #network-canvas {
     width: 100%;
     height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     display: block;
     cursor: crosshair;
 }

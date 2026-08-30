@@ -9,14 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Mono:wght@400;700&family=VT323&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Outfit:wght@300;400;600&family=Space+Mono:wght@400;700&family=VT323&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <canvas id="interactive-bg" class="interactive-bg"></canvas>
-    
+
     <div class="easter-eggs">
         <div class="ee-text ee-1 vt">IS IT REAL?</div>
         <div class="ee-text ee-2 vt">/* no comment */</div>
@@ -27,6 +27,9 @@
     <div class="easter-egg-hint outfit">The void holds secrets. Close the terminal to explore.</div>
 
     <div class="status-online mono">STATUS: <span class="online-text">ONLINE</span></div>
+
+    <!-- Brand Text -->
+    <div class="brand-text vt">127.0.0.1</div>
 
     <nav class="top-nav outfit">
         <button class="nav-btn active" data-target="home">HOME</button>
@@ -56,7 +59,7 @@
             <!-- About Page -->
             <section id="about" class="page">
                 <div class="editorial-header">
-                    <h1 class="hero-name outfit">Mujaffar<span>&copy;</span></h1>
+                    <h1 class="hero-name outfit">Mujaffar <span class="surname">Sheikh</span></h1>
                     <div class="hero-intro">
                         <span class="intro-label mono">[INTRO]</span>
                         <p class="intro-text outfit">Physicist | Quant Trader in Training | Software Developer</p>
@@ -146,7 +149,8 @@
                 </div>
 
                 <div class="animation-credits outfit">
-                    Background spider animation inspired by <a href="https://www.youtube.com/@zensei-xg4bw" target="_blank">meowish (@zensei-xg4bw)</a>
+                    Background spider animation inspired by <a href="https://www.youtube.com/@zensei-xg4bw"
+                        target="_blank">meowish (@zensei-xg4bw)</a>
                 </div>
             </section>
 
@@ -154,6 +158,11 @@
             <section id="social" class="page">
                 <div class="network-container">
                     <canvas id="network-canvas"></canvas>
+                </div>
+                <div class="animation-credits outfit">
+                    contact: <a href="mailto:mujaffar.tech@gmail.com">mujaffar.tech@gmail.com</a>
+                    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; origin: <a href="https://nitdgp.ac.in/" target="_blank">NIT
+                        Durgapur</a>
                 </div>
             </section>
         </div>
